@@ -1,5 +1,3 @@
-/* Configure I/O Ports */
-
 /* For La Fortuna board
 
    | Port | Pin | Function         |
@@ -15,7 +13,7 @@
 #include <avr/io.h>
 #include <util/delay.h>
 #include <avr/interrupt.h>
-// #include <time.h>
+#include <time.h>
 #include <stdlib.h>
 #include "lib/lcd/lcd.h"
 #include "lib/rotary/rotary.h"
@@ -90,7 +88,7 @@ void init(void) {
     TIMSK3 |= _BV(OCIE3A);
 
     /* Set seed for random numbers */
-    // srand(time(NULL));
+    srand(time(NULL));
 }
 
 void draw_crab(uint8_t pos, bool damaged)
